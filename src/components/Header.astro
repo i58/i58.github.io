@@ -1,0 +1,302 @@
+---
+import { SITE_TITLE, PHONE } from '../consts';
+import HeaderLink from './HeaderLink.astro';
+---
+
+<header>
+	<nav>
+		<div class="nav-brand">
+			<h2><a href="/">{SITE_TITLE}</a></h2>
+		</div>
+		
+		<!-- 移动端菜单按钮 -->
+		<button class="mobile-menu-toggle" aria-label="打开菜单">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		
+		<div class="nav-content">
+			<div class="internal-links">
+				<HeaderLink href="/">首页</HeaderLink>
+				<HeaderLink href="/services">服务</HeaderLink>
+				<HeaderLink href="/gallery">作品</HeaderLink>
+				<HeaderLink href="/contact">联系</HeaderLink>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<style>
+	header {
+		margin: 0;
+		padding: 0 1rem;
+		background: white;
+		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		position: sticky;
+		top: 0;
+		z-index: 1000;
+	}
+	
+	h2 {
+		margin: 0;
+		font-size: 1.2rem;
+	}
+
+	h2 a,
+	h2 a.active {
+		text-decoration: none;
+		color: var(--accent);
+		font-weight: 700;
+	}
+	
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 1rem 0;
+	}
+
+	.nav-brand {
+		flex-shrink: 0;
+	}
+
+	.nav-content {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.internal-links {
+		display: flex;
+		gap: 0.75rem;
+		align-items: center;
+	}
+
+	/* PC端电话按钮优化 */
+	.cta .phone-btn {
+		background: linear-gradient(135deg, var(--accent), var(--accent-light));
+		color: white;
+		padding: 0.6rem 1rem;
+		border-radius: 25px;
+		text-decoration: none;
+		font-weight: 600;
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		transition: all 0.3s ease;
+		box-shadow: 0 3px 12px rgba(255, 111, 145, 0.25);
+		font-size: 0.9rem;
+		white-space: nowrap;
+	}
+	
+	.cta .phone-btn:hover {
+		transform: translateY(-1px);
+		box-shadow: 0 5px 18px rgba(255, 111, 145, 0.35);
+	}
+
+	.phone-icon {
+		font-size: 1rem;
+	}
+
+	.phone-text {
+		font-size: 0.85rem;
+	}
+
+	.phone-number {
+		font-size: 0.9rem;
+		font-weight: 700;
+	}
+	
+	nav a {
+		padding: 0.8rem 0.5rem;
+		color: var(--black);
+		border-bottom: 3px solid transparent;
+		text-decoration: none;
+		font-weight: 600;
+		transition: all 0.3s ease;
+	}
+	
+	nav a.active {
+		text-decoration: none;
+		border-bottom-color: var(--accent);
+		color: var(--accent);
+	}
+
+	nav a:hover {
+		color: var(--accent);
+		border-bottom-color: var(--accent);
+	}
+
+	/* 移动端菜单按钮 */
+	.mobile-menu-toggle {
+		display: none;
+		flex-direction: column;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0.5rem;
+		gap: 4px;
+		z-index: 1001;
+	}
+
+	.mobile-menu-toggle span {
+		width: 25px;
+		height: 3px;
+		background: var(--accent);
+		border-radius: 2px;
+		transition: all 0.3s ease;
+		display: block;
+	}
+
+	/* 移动端样式 */
+	@media (max-width: 768px) {
+		nav {
+			padding: 0.8rem 0;
+		}
+
+		h2 {
+			font-size: 1.1rem;
+		}
+
+		.mobile-menu-toggle {
+			display: flex;
+		}
+
+		.nav-content {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(0, 0, 0, 0.5);
+			flex-direction: column;
+			justify-content: flex-start;
+			padding-top: 80px;
+			transform: translateX(-100%);
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.3s ease;
+			z-index: 999;
+		}
+
+		.nav-content.active {
+			transform: translateX(0);
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.nav-content.active .internal-links,
+		.nav-content.active .cta {
+			background: white;
+			margin: 0 1rem;
+			border-radius: 15px;
+			padding: 1.5rem;
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+		}
+
+		.internal-links {
+			flex-direction: column;
+			gap: 0.5rem;
+			width: 100%;
+			margin-bottom: 1rem;
+		}
+
+		.internal-links a {
+			padding: 1rem;
+			text-align: center;
+			border-bottom: none;
+			border-left: 3px solid transparent;
+			width: 100%;
+			border-radius: 8px;
+		}
+
+		.internal-links a.active,
+		.internal-links a:hover {
+			border-left-color: var(--accent);
+			border-bottom-color: transparent;
+			background: rgba(255, 111, 145, 0.1);
+		}
+
+		.cta {
+			width: 100%;
+		}
+
+		.cta .phone-btn {
+			justify-content: center;
+			padding: 1rem 1.5rem;
+			width: 100%;
+			font-size: 1rem;
+		}
+
+		.phone-text {
+			display: none;
+		}
+	}
+
+	@media (max-width: 480px) {
+		header {
+			padding: 0 0.5rem;
+		}
+
+		h2 {
+			font-size: 1rem;
+		}
+
+		.phone-number {
+			font-size: 0.9rem;
+		}
+
+		.mobile-menu-toggle span {
+			width: 20px;
+			height: 2px;
+		}
+
+		.nav-content.active .internal-links,
+		.nav-content.active .cta {
+			margin: 0 0.5rem;
+		}
+	}
+</style>
+
+<script>
+	// 移动端菜单切换功能
+	document.addEventListener('DOMContentLoaded', function() {
+		const menuToggle = document.querySelector('.mobile-menu-toggle');
+		const navContent = document.querySelector('.nav-content');
+		
+		if (menuToggle && navContent) {
+			menuToggle.addEventListener('click', function(e) {
+				e.stopPropagation();
+				navContent.classList.toggle('active');
+				menuToggle.classList.toggle('active');
+				
+				// 更新aria-label
+				const isOpen = navContent.classList.contains('active');
+				menuToggle.setAttribute('aria-label', isOpen ? '关闭菜单' : '打开菜单');
+			});
+
+			// 点击菜单项后关闭菜单
+			const menuLinks = document.querySelectorAll('.internal-links a');
+			menuLinks.forEach(link => {
+				link.addEventListener('click', function() {
+					navContent.classList.remove('active');
+					menuToggle.classList.remove('active');
+					menuToggle.setAttribute('aria-label', '打开菜单');
+				});
+			});
+
+			// 点击背景关闭菜单
+			navContent.addEventListener('click', function(e) {
+				if (e.target === navContent) {
+					navContent.classList.remove('active');
+					menuToggle.classList.remove('active');
+					menuToggle.setAttribute('aria-label', '打开菜单');
+				}
+			});
+		}
+	});
+</script>

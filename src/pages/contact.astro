@@ -1,0 +1,416 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, PHONE, WECHAT_QR_PLACEHOLDER } from '../consts';
+---
+
+<html lang="zh-CN">
+  <head>
+    <BaseHead title={`${SITE_TITLE} — 联系我们`} description="专业美甲美睫服务预约，多种联系方式，随时为您服务" />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <div class="contact-header">
+        <h1>💅 联系我们</h1>
+        <p>多种预约方式，随时为您提供专业服务</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- 电话预约 -->
+        <div class="contact-card">
+          <div class="contact-icon">📞</div>
+          <h2>电话预约</h2>
+          <p>直接拨打我们的电话，快速预约您心仪的服务时间</p>
+          <a href={`tel:${PHONE}`} class="contact-btn phone-btn">
+            <span class="btn-icon">📱</span>
+            {PHONE}
+          </a>
+        </div>
+
+        <!-- 微信预约 -->
+        <div class="contact-card">
+          <div class="contact-icon">💬</div>
+          <h2>微信预约</h2>
+          <p>扫描二维码添加微信，享受更便捷的预约体验</p>
+          <div class="wechat-section">
+            <img src={WECHAT_QR_PLACEHOLDER} alt="微信二维码" class="qr-code" />
+            <p class="qr-tip">长按识别二维码</p>
+          </div>
+        </div>
+
+        <!-- 到店咨询 -->
+        <div class="contact-card">
+          <div class="contact-icon">📍</div>
+          <h2>到店咨询</h2>
+          <p>欢迎到店参观，我们的专业技师将为您详细介绍服务</p>
+          <div class="address-info">
+            <p><strong>地址：</strong>示例街道 12 号</p>
+            <p><strong>营业时间：</strong></p>
+            <ul>
+              <li>周一至周六：10:00 - 19:00</li>
+              <li>周日：休息</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 服务特色 -->
+      <div class="service-features">
+        <h2>为什么选择我们</h2>
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon">⏰</div>
+            <h3>灵活预约</h3>
+            <p>多种预约方式，时间灵活安排</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🎯</div>
+            <h3>专业服务</h3>
+            <p>经验丰富的技师，为您提供专业建议</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">💎</div>
+            <h3>品质保证</h3>
+            <p>使用优质产品，确保服务品质</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🤝</div>
+            <h3>贴心服务</h3>
+            <p>全程贴心服务，让您享受舒适体验</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 预约提醒 -->
+      <div class="booking-tips">
+        <h2>预约小贴士</h2>
+        <div class="tips-grid">
+          <div class="tip-item">
+            <div class="tip-number">1</div>
+            <p>建议提前1-2天预约，确保您心仪的时间段</p>
+          </div>
+          <div class="tip-item">
+            <div class="tip-number">2</div>
+            <p>首次到店请提前15分钟到达，填写相关信息</p>
+          </div>
+          <div class="tip-item">
+            <div class="tip-number">3</div>
+            <p>如有特殊需求或过敏史，请提前告知我们</p>
+          </div>
+          <div class="tip-item">
+            <div class="tip-number">4</div>
+            <p>如需取消或改期，请提前2小时联系我们</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <Footer />
+  </body>
+  <style>
+    .contact-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .contact-header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--accent), #ff8a80);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .contact-header p {
+      font-size: 1.2rem;
+      color: rgb(var(--gray));
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .contact-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-card h2 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .contact-card p {
+      color: rgb(var(--gray));
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, var(--accent), #ff8a80);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 111, 145, 0.4);
+    }
+
+    .btn-icon {
+      font-size: 1.2rem;
+    }
+
+    .wechat-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .qr-code {
+      width: 200px;
+      height: 200px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+    }
+
+    .qr-tip {
+      font-size: 0.9rem;
+      color: rgb(var(--gray));
+      margin: 0;
+    }
+
+    .address-info {
+      text-align: left;
+    }
+
+    .address-info p {
+      margin-bottom: 0.5rem;
+    }
+
+    .address-info ul {
+      margin: 0.5rem 0 0 1rem;
+      padding: 0;
+    }
+
+    .address-info li {
+      margin-bottom: 0.3rem;
+    }
+
+    .service-features {
+      background: linear-gradient(135deg, #fff5f5, #ffe8e8);
+      padding: 4rem 2rem;
+      border-radius: 30px;
+      margin-bottom: 4rem;
+    }
+
+    .service-features h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 2.5rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-item {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-item h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .feature-item p {
+      color: rgb(var(--gray));
+    }
+
+    .booking-tips {
+      background: linear-gradient(135deg, var(--accent), #ff8a80);
+      color: white;
+      padding: 4rem 2rem;
+      border-radius: 30px;
+    }
+
+    .booking-tips h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 2.5rem;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .tip-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+    }
+
+    .tip-number {
+      background: white;
+      color: var(--accent);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .tip-item p {
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      .contact-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .contact-header p {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 0 0.5rem 3rem;
+      }
+
+      .contact-card {
+        padding: 2rem;
+        margin: 0;
+      }
+
+      .contact-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+      }
+
+      .qr-code {
+        width: 150px;
+        height: 150px;
+      }
+
+      .service-features {
+        padding: 3rem 1rem;
+        margin: 0 0.5rem 3rem;
+      }
+
+      .service-features h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .feature-item {
+        padding: 1.5rem;
+      }
+
+      .booking-tips {
+        padding: 3rem 1rem;
+        margin: 0 0.5rem;
+      }
+
+      .booking-tips h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .tips-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .tip-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-header h1 {
+        font-size: 2rem;
+      }
+
+      .contact-card {
+        padding: 1.5rem;
+      }
+
+      .contact-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+      }
+
+      .qr-code {
+        width: 120px;
+        height: 120px;
+      }
+
+      .service-features h2 {
+        font-size: 1.8rem;
+      }
+
+      .booking-tips h2 {
+        font-size: 1.8rem;
+      }
+
+      .tip-item {
+        padding: 1rem;
+      }
+    }
+  </style>
+</html>

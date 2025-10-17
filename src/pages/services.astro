@@ -1,0 +1,520 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<html lang="zh-CN">
+  <head>
+    <BaseHead title={`${SITE_TITLE} — 服务项目`} description="专业美甲美睫服务，精致工艺，个性定制，为您打造完美造型" />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <div class="services-header">
+        <h1>💅 服务项目</h1>
+        <p>专业技师，优质产品，为您提供全方位的美甲美睫服务</p>
+      </div>
+
+      <!-- 美甲服务 -->
+      <section class="service-category">
+        <div class="category-header">
+          <div class="category-icon">💅</div>
+          <h2>美甲服务</h2>
+          <p>精致美甲，让您的指尖绽放光彩</p>
+        </div>
+        
+        <div class="services-grid">
+          <div class="service-item">
+            <img src="/nail-technician.jpg" alt="法式美甲" />
+            <div class="service-content">
+              <h3>法式美甲</h3>
+              <p class="service-desc">经典法式风格，简约优雅，适合各种场合</p>
+              <div class="service-details">
+                <span class="price">¥88</span>
+                <span class="duration">60分钟</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="service-item">
+            <img src="/salon-interior.jpg" alt="创意彩绘" />
+            <div class="service-content">
+              <h3>创意彩绘</h3>
+              <p class="service-desc">个性图案设计，展现独特风格</p>
+              <div class="service-details">
+                <span class="price">¥128</span>
+                <span class="duration">90分钟</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="service-item">
+            <img src="/modern-salon.jpg" alt="渐变美甲" />
+            <div class="service-content">
+              <h3>渐变美甲</h3>
+              <p class="service-desc">时尚渐变色彩，潮流前沿</p>
+              <div class="service-details">
+                <span class="price">¥108</span>
+                <span class="duration">75分钟</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 美睫服务 -->
+      <section class="service-category">
+        <div class="category-header">
+          <div class="category-icon">👁️</div>
+          <h2>美睫服务</h2>
+          <p>自然卷翘，让您的双眼更加迷人</p>
+        </div>
+        
+        <div class="services-grid">
+          <div class="service-item">
+            <img src="/salon-workspace.jpg" alt="自然美睫" />
+            <div class="service-content">
+              <h3>自然美睫</h3>
+              <p class="service-desc">自然卷翘效果，日常妆容首选</p>
+              <div class="service-details">
+                <span class="price">¥168</span>
+                <span class="duration">120分钟</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="service-item">
+            <img src="/nail-tools.jpg" alt="浓密美睫" />
+            <div class="service-content">
+              <h3>浓密美睫</h3>
+              <p class="service-desc">浓密卷翘，打造深邃眼神</p>
+              <div class="service-details">
+                <span class="price">¥198</span>
+                <span class="duration">150分钟</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="service-item">
+            <img src="/salon-decoration.jpg" alt="个性定制" />
+            <div class="service-content">
+              <h3>个性定制</h3>
+              <p class="service-desc">根据眼型定制，完美匹配</p>
+              <div class="service-details">
+                <span class="price">¥228</span>
+                <span class="duration">180分钟</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 护理服务 -->
+      <section class="service-category">
+        <div class="category-header">
+          <div class="category-icon">🤲</div>
+          <h2>护理服务</h2>
+          <p>深层护理，让您的手足更加柔嫩</p>
+        </div>
+        
+        <div class="services-grid">
+          <div class="service-item">
+            <img src="/hero-bg.jpg" alt="手足护理" />
+            <div class="service-content">
+              <h3>手足护理</h3>
+              <p class="service-desc">深层清洁，滋润护理</p>
+              <div class="service-details">
+                <span class="price">¥68</span>
+                <span class="duration">45分钟</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="service-item">
+            <img src="/salon-interior.jpg" alt="手部按摩" />
+            <div class="service-content">
+              <h3>手部按摩</h3>
+              <p class="service-desc">专业按摩，放松身心</p>
+              <div class="service-details">
+                <span class="price">¥88</span>
+                <span class="duration">60分钟</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="service-item">
+            <img src="/modern-salon.jpg" alt="足部护理" />
+            <div class="service-content">
+              <h3>足部护理</h3>
+              <p class="service-desc">足部清洁，去除角质</p>
+              <div class="service-details">
+                <span class="price">¥78</span>
+                <span class="duration">50分钟</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 服务特色 -->
+      <section class="service-features">
+        <h2>服务特色</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">✨</div>
+            <h3>专业技师</h3>
+            <p>拥有多年经验的专业技师，技术精湛，服务贴心</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>安全卫生</h3>
+            <p>严格消毒流程，使用一次性工具，确保安全卫生</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💎</div>
+            <h3>优质产品</h3>
+            <p>采用进口优质产品，品质有保障，效果更持久</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>个性定制</h3>
+            <p>根据您的喜好和需求，提供个性化定制服务</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 预约CTA -->
+      <section class="booking-cta">
+        <div class="cta-content">
+          <h2>准备预约服务了吗？</h2>
+          <p>选择您心仪的服务，立即预约享受专业服务</p>
+          <div class="cta-buttons">
+            <a href="/contact" class="btn-primary">立即预约</a>
+            <a href="/gallery" class="btn-secondary">查看作品</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+  <style>
+    .services-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .services-header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--accent), #ff8a80);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .services-header p {
+      font-size: 1.2rem;
+      color: rgb(var(--gray));
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .service-category {
+      margin-bottom: 5rem;
+    }
+
+    .category-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .category-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .category-header h2 {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .category-header p {
+      font-size: 1.1rem;
+      color: rgb(var(--gray));
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-item {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .service-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .service-content {
+      padding: 2rem;
+    }
+
+    .service-content h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .service-desc {
+      color: rgb(var(--gray));
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .service-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .duration {
+      color: rgb(var(--gray));
+      font-size: 0.9rem;
+    }
+
+    .service-features {
+      background: linear-gradient(135deg, #fff5f5, #ffe8e8);
+      padding: 4rem 2rem;
+      border-radius: 30px;
+      margin-bottom: 4rem;
+    }
+
+    .service-features h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 2.5rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .feature-card p {
+      color: rgb(var(--gray));
+    }
+
+    .booking-cta {
+      background: linear-gradient(135deg, var(--accent), #ff8a80);
+      color: white;
+      padding: 4rem 2rem;
+      border-radius: 30px;
+      text-align: center;
+    }
+
+    .cta-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary, .btn-secondary {
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: white;
+      color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: #f5f5f5;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      .services-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .services-header p {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+
+      .service-category {
+        margin-bottom: 3rem;
+      }
+
+      .category-header h2 {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .category-header p {
+        font-size: 1rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 0 0.5rem;
+      }
+
+      .service-item {
+        margin: 0;
+      }
+
+      .service-content {
+        padding: 1.5rem;
+      }
+
+      .service-content h3 {
+        font-size: 1.3rem;
+      }
+
+      .service-features {
+        padding: 3rem 1rem;
+        margin: 0 0.5rem 3rem;
+      }
+
+      .service-features h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .feature-card {
+        padding: 1.5rem;
+      }
+
+      .booking-cta {
+        padding: 3rem 1rem;
+        margin: 0 0.5rem;
+      }
+
+      .booking-cta h2 {
+        font-size: 2rem;
+      }
+
+      .booking-cta p {
+        font-size: 1.1rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .services-header h1 {
+        font-size: 2rem;
+      }
+
+      .category-header h2 {
+        font-size: 1.8rem;
+      }
+
+      .service-content h3 {
+        font-size: 1.2rem;
+      }
+
+      .service-details {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+      }
+
+      .price {
+        font-size: 1.3rem;
+      }
+
+      .service-features h2 {
+        font-size: 1.8rem;
+      }
+
+      .booking-cta h2 {
+        font-size: 1.8rem;
+      }
+
+      .btn-primary, .btn-secondary {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 250px;
+      }
+    }
+  </style>
+</html>

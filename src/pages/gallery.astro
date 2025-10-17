@@ -1,0 +1,334 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<html lang="zh-CN">
+  <head>
+    <BaseHead title={`${SITE_TITLE} — 作品展示`} description="专业美甲美睫作品展示，精致工艺，个性定制" />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <div class="gallery-header">
+        <h1>💅 作品展示</h1>
+        <p>每一份作品都是我们对美的诠释，为您打造独一无二的精致造型</p>
+      </div>
+      
+      <div class="gallery-categories">
+        <button class="category-btn active" data-category="all">全部作品</button>
+        <button class="category-btn" data-category="nail">美甲作品</button>
+        <button class="category-btn" data-category="lash">美睫作品</button>
+        <button class="category-btn" data-category="care">护理作品</button>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" data-category="nail">
+          <img src="/nail-technician.jpg" alt="精致美甲作品" />
+          <div class="gallery-overlay">
+            <h3>精致美甲</h3>
+            <p>法式美甲，简约优雅</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-category="nail">
+          <img src="/salon-interior.jpg" alt="创意美甲设计" />
+          <div class="gallery-overlay">
+            <h3>创意设计</h3>
+            <p>个性图案，独特风格</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-category="lash">
+          <img src="/salon-workspace.jpg" alt="自然美睫" />
+          <div class="gallery-overlay">
+            <h3>自然美睫</h3>
+            <p>卷翘自然，魅力无限</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-category="nail">
+          <img src="/modern-salon.jpg" alt="时尚美甲" />
+          <div class="gallery-overlay">
+            <h3>时尚美甲</h3>
+            <p>潮流色彩，时尚前沿</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-category="care">
+          <img src="/salon-decoration.jpg" alt="手足护理" />
+          <div class="gallery-overlay">
+            <h3>手足护理</h3>
+            <p>深层清洁，柔嫩肌肤</p>
+          </div>
+        </div>
+        
+        <div class="gallery-item" data-category="lash">
+          <img src="/nail-tools.jpg" alt="专业美睫" />
+          <div class="gallery-overlay">
+            <h3>专业美睫</h3>
+            <p>专业技师，品质保证</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-cta">
+        <h2>喜欢我们的作品吗？</h2>
+        <p>立即预约，让我们的专业技师为您打造专属造型</p>
+        <a href="/contact" class="btn-primary">立即预约</a>
+      </div>
+    </main>
+    <Footer />
+  </body>
+  <style>
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .gallery-header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--accent), #ff8a80);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .gallery-header p {
+      font-size: 1.2rem;
+      color: rgb(var(--gray));
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .gallery-categories {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .category-btn {
+      padding: 0.8rem 1.5rem;
+      border: 2px solid var(--accent);
+      background: transparent;
+      color: var(--accent);
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    .category-btn.active,
+    .category-btn:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      color: white;
+      padding: 2rem 1.5rem 1.5rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      transform: translateY(0);
+    }
+
+    .gallery-overlay h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.3rem;
+    }
+
+    .gallery-overlay p {
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    .gallery-cta {
+      background: linear-gradient(135deg, var(--accent), #ff8a80);
+      color: white;
+      padding: 4rem 2rem;
+      border-radius: 30px;
+      text-align: center;
+    }
+
+    .gallery-cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .gallery-cta p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .btn-primary {
+      padding: 1rem 2rem;
+      background: white;
+      color: var(--accent);
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: #f5f5f5;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .gallery-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .gallery-header p {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+
+      .gallery-categories {
+        justify-content: center;
+        gap: 0.8rem;
+        margin-bottom: 2rem;
+      }
+
+      .category-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 0 0.5rem 3rem;
+      }
+
+      .gallery-item {
+        margin: 0;
+      }
+
+      .gallery-item img {
+        height: 250px;
+      }
+
+      .gallery-cta {
+        padding: 3rem 1rem;
+        margin: 0 0.5rem;
+      }
+
+      .gallery-cta h2 {
+        font-size: 2rem;
+      }
+
+      .gallery-cta p {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-header h1 {
+        font-size: 2rem;
+      }
+
+      .gallery-header p {
+        font-size: 0.9rem;
+      }
+
+      .gallery-categories {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .category-btn {
+        width: 200px;
+        padding: 0.7rem;
+      }
+
+      .gallery-item img {
+        height: 200px;
+      }
+
+      .gallery-cta h2 {
+        font-size: 1.8rem;
+      }
+
+      .btn-primary {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</html>
+
+<script>
+  // Gallery filtering functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    categoryBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const category = this.getAttribute('data-category');
+        
+        // Update active button
+        categoryBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Filter gallery items
+        galleryItems.forEach(item => {
+          if (category === 'all' || item.getAttribute('data-category') === category) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
